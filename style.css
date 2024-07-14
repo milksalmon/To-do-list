@@ -1,0 +1,127 @@
+body { /* This makes sure div elements can touch the walls */
+    margin: 0;
+    padding: 0;
+}
+
+* { /* all...This helps resolve the input button div overlap */
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.addbar {
+    background-color: #40d2ff;
+    text-align: center;
+    padding: 30px 40px; /* <-- height */
+}
+
+h2 {
+    margin: 10px;
+}
+
+.addbar:after { /* Helps contain the children element like taskInput and addBtn */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#taskInput { /* THIS INPUTS YOUR TEXTS */
+    float: left;
+    font-size: 16px;
+    width: 75%;
+    border: none;
+    padding: 10px;
+    /* border-radius: 30px; */
+}
+
+#taskInput:focus { /* When clicked and stays clicked, remove ugly border */
+    outline: none;
+}
+
+#addTask { /* Add Button */
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 25%;
+    background-color: #9b9b9b;
+}
+
+#addTask:hover {
+    background-color: #00ffff;
+}
+
+#addTask:active {
+    background-color: #00008b;
+}
+
+ul li { /* THIS IS THE LIST */
+    background-color: #dddddd;
+    margin: 0;
+    list-style: none;
+    padding: 15px;
+    position: relative; /* Add position relative to the list item */
+    transition: 0.1s ease-in-out;
+    font-size: 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #9d9d9d;
+}
+
+li { /* Makes sure the text can't be selected */
+    user-select: none;
+}
+
+.addedList { /* ul class */
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li:hover {
+    background-color: #b7b7b7;
+    cursor: pointer;
+}
+
+#removeButton { /* trashcan button */
+    margin-right: 10px;
+    float: right;
+    width: 50px;
+    background-image: url("images/trashcan-closed.png");
+    transition: ease-in-out;
+}
+
+#removeButton:hover {
+    width: 50px;
+    content: url("images/trashcan-opened.png");
+    cursor: pointer;
+}
+
+.deleteTask {
+    background-color: #dddddd;
+    border: none;
+    padding: 5px 25px;
+    float: right;
+    transition: 0.1s ease-in-out;
+    position: absolute; /* Position it within the list */
+    right: 0;
+    top: 0;
+    height: 100%; /* Max height, but gets stopped by the list. This makes the button match the height. */
+}
+
+li:hover .deleteTask {
+    background-color: #b7b7b7;
+}
+
+li:hover .deleteTask:hover {
+    background-color: #ff4b4b; /* Overrides button color from list */
+    color: white;
+}
+
+ul li.checked {
+    background-color: #8d8d8d;
+    text-decoration: line-through;
+    color: white;
+}

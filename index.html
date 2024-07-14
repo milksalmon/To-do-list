@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✏️</text></svg>"> <!--Taken from css emoji favicon site --> 
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="addbar">
+        <h2>My To Do List</h2>
+        <input id="taskInput" type="text" placeholder="Task...">
+        <button id="addTask">Add</button>
+    </div>
+
+    <ul class="addedList">
+        <!-- Create a class instead of using javascript, put display:none, and change to block when trashcan is clicked. -->
+
+        <!-- All the lists will be here in <li> -->
+    </ul>
+
+    <img onclick="removeTask()" id="removeButton" src="images/trashcan-closed.png" alt="trashcan delete"/> <!-- lol -->
+
+    <script src="script.js"></script>
+</body>
+</html>
